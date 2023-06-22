@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "750203130851",
+    "firebase_url": "https://plants-green-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "plants-green",
+    "storage_bucket": "plants-green.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750203130851:android:5ce4e8741d4ee0556646d6",
+        "android_client_info": {
+          "package_name": "com.example.plants_green"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHKjyVXlaKQ7oPTUzuTEtKZ26CFEdHYdc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

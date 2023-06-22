@@ -9,9 +9,9 @@ class CustomCard extends StatelessWidget {
     required this.waktu,
   });
 
-  double tanah;
-  double ph;
-  double udara;
+  num tanah;
+  num ph;
+  num udara;
   String waktu;
 
   @override

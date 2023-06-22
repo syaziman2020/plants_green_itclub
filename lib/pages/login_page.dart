@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:plants_green/pages/dashboard_page.dart';
+import 'package:plants_green/services/auth.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController emailC = TextEditingController();
+  TextEditingController passC = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +48,7 @@ class LoginPage extends StatelessWidget {
                 height: 5,
               ),
               TextField(
+                controller: emailC,
                 decoration: InputDecoration(
                   hintText: 'Masukkan email',
                   border: OutlineInputBorder(
@@ -58,6 +68,7 @@ class LoginPage extends StatelessWidget {
                 height: 5,
               ),
               TextField(
+                controller: passC,
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Masukkan password',
@@ -78,13 +89,18 @@ class LoginPage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromARGB(255, 70, 199, 74),
                   ),
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DashboardPage(),
-                      ),
-                    );
+                  onPressed: () async {
+                    bool result =
+                        await AuthServices().login(emailC.text, passC.text);
+
+                    if (result) {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DashboardPage(),
+                        ),
+                      );
+                    }
                   },
                   child: Text(
                     'Login',
